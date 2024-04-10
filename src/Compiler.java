@@ -31,17 +31,19 @@ public class Compiler
 		processCommandLine(args);
 		System.out.println("[BUILD SC] ");
 		buildSc();
-		/*		System.out.println("[BUILD SA] ");
+		System.out.println("[BUILD SA] ");
 		buildSa();
+
 		System.out.println("[BUILD TS] ");
 		buildTs();
-		System.out.println("[TYPE CHECKING]");
-		typeCheck();
+
+		//System.out.println("[TYPE CHECKING]");
+		//typeCheck();
 		System.out.println("[BUILD C3A] ");
 		buildC3a();
 		System.out.println("[BUILD PRE NASM] ");
 		buildPreNasm();
-		System.out.println("[BUILD FLOW GRAPH] ");
+		/*System.out.println("[BUILD FLOW GRAPH] ");
 		buildFg();
 		System.out.println("[SOLVE FLOW GRAPH]");
 		solveFg();
@@ -104,8 +106,6 @@ public class Compiler
 			scRoot.apply(sc2sa);
 			saRoot = sc2sa.getRoot();
 		} catch (Exception ignored) {
-		    System.out.println("exception construction arbre abstrait");
-		    ignored.printStackTrace();
 		}
 		PrintStream out = System.out;
 		if (verboseLevel > 1) {
@@ -135,7 +135,7 @@ public class Compiler
 			System.err.println(e.getMessage());
 			System.exit(e.getCode());
 		} catch (Exception e) {
-		    e.printStackTrace();
+			e.printStackTrace();
 		}
 		if (verboseLevel > 1) {
 			System.out.println("[PRINT TS]");
@@ -207,12 +207,12 @@ public class Compiler
     }*/
 
 
-    public static String removeSuffix(final String s, final String suffix)
-    {
+	public static String removeSuffix(final String s, final String suffix)
+	{
 		if (s != null && suffix != null && s.endsWith(suffix)){
 			return s.substring(0, s.length() - suffix.length());
 		}
 		return s;
-    }
+	}
 
 }
